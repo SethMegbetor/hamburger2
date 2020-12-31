@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #eafbff; */
+  background-color: #555f93;
+  /* background-image: linear-gradient(
+    to bottom,
+    #eafbff 0%,
+    #eafbff 50%,
+    #5290f9 50%,
+    #5290f9 100%
+  ); */
+  font-family: "Muli", sans-serif;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  margin: 0;
+}
+.navContainer {
+  background-color: black;
+  display: flex;
+  height: 50px;
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 100px;
+  height: 50px;
+}
+
+nav {
+  /* background-color: #fff; */
+  background-color: black;
+  padding: 20px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: width 0.6s linear;
+  overflow-x: hidden;
+}
+
+nav.active {
+  width: 350px;
+}
+
+nav a.current,
+nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  transition: width 0.6s linear;
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+nav ul li {
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY(360deg);
+}
+
+nav ul a {
+  position: relative;
+  /* color: #000; */
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.icon {
+  /* background-color: #fff; */
+  background-color: black;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+.icon:focus {
+  outline: 0;
+}
+
+.icon .line {
+  background-color: #5290f9;
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+nav.active .icon .line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+  transform: rotate(765deg) translateY(-5.5px);
+}
+
+.active a.current,
+.active a:hover {
+  /* color: #c0392b; */
+  color: #5290f9;
+  font-weight: bold;
+}
+
+/* sliding text */
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(36, 32, 32);
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  height: 50px;
+  padding-left: 15px;
+  /* hide the text */
+  overflow: hidden;
+}
+
+.slider div {
+  color: white;
+  height: 50px;
+  margin-bottom: 50px;
+  padding: 2px 15px;
+  text-align: center;
+  /* to make it perfectly align */
+  box-sizing: border-box;
+}
+
+.slider-text1 {
+  background: #5290f9;
+  animation: slide 8s linear infinite;
+}
+.slider-text2 {
+  background: #5290f9;
+}
+.slider-text3 {
+  background: #5290f9;
+}
+.slider-text4 {
+  background: #5290f9;
+}
+
+@keyframes slide {
+  0% {
+    margin-top: -300px;
+  }
+  5% {
+    margin-top: -200px;
+  }
+  33% {
+    margin-top: -200px;
+  }
+  38% {
+    margin-top: -100px;
+  }
+  66% {
+    margin-top: -100px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
+/* mobile view */
+/* Most of the Smartphones Mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+  nav.active {
+    margin-left: 0px;
+    width: 300px;
+  }
+  nav {
+    padding: 0px;
+  }
+
+  nav > ul {
+    /* display: block; */
+    color: red;
+    /* background-color: green; */
+    padding: auto;
+    padding-right: 0px;
+    align-items: center;
+    text-align: center;
+    /* padding-inline-start: 0px; */
+  }
+
+  /* nav > ul > li {
+    align-items: center;
+    text-align: center;
+  } */
+  img {
+    width: 80px;
+    height: 50px;
+  }
+}
